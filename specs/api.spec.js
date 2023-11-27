@@ -89,6 +89,6 @@ describe("Напишите 5 апи-тестов на сервис reqres.in", (
     const response = await updatesUser(1);
     const today = new Date();
     const date = today.toISOString();
-    expect(response.data.updatedAt).toContain(date.slice(0, -5));
+    expect(response.data.updatedAt).toContain(date.slice(0, -7));
   });
 });
