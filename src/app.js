@@ -40,3 +40,11 @@ export const getTotal = (items = [], discount = 0) => {
   }, 0);
   return total - (total * discount) / 100;
 };
+
+export const getScore = (users) => {
+  let sum = 0;
+  for (let name in users) {
+    sum += users[name];
+  }
+  return sum;
+};
