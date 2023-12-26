@@ -1,9 +1,9 @@
 const axios = require("axios");
-import { url } from "../../config.js";
+import { config_Petstore } from "../../config.js";
 
-export const user = {
+const user = {
   login: (payload) => {
-    return axios.post(`${url}/auth`, {
+    return axios.post(`${config_Petstore.url}/auth`, {
       headers: {
         "Content-Type": "application/json",
       },
@@ -14,4 +14,4 @@ export const user = {
   },
 };
 
-export default user;
+export { user };

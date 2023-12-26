@@ -4,7 +4,7 @@ import { config_Petstore } from "../../config.js";
 const petStore = {
   getPetByStatus: (status) => {
     return axios.get(
-      `${config_Petstore.url_Petstore}pet/findByStatus?status=${status}`,
+      `${config_Petstore.url_Petstore}/pet/findByStatus?status=${status}`,
       {
         headers: {
           accept: "application/json",
@@ -13,32 +13,39 @@ const petStore = {
     );
   },
 
-  create: (payload) => {
-    return axios.post(`${url_Petstore}/booking`, {
+  getPetById: (petId) => {
+    return axios.get(`${config_Petstore.url_Petstore}/pet/${petId}`, {
       headers: {
+        accept: "application/json",
+      },
+    });
+  },
+
+  create: (payload) => {
+    return axios.post(`${config_Petstore.url_Petstore}/pet`, {
+      headers: {
+        accept: "application/json",
         "Content-Type": "application/json",
       },
       body: { payload },
     });
   },
 
-  update: async (id, payload) => {
-    return axios.put(`${url_Petstore}/booking/${id}`, {
+  update: async (payload) => {
+    return axios.put(`${config_Petstore.url_Petstore}/pet`, {
       headers: {
-        Authorization: "Basic YWRtaW46cGFzc3dvcmQxMjM=",
+        accept: "application/json",
         "Content-Type": "application/json",
-        Cookie: "token=abc123",
       },
       body: { payload },
     });
   },
 
   delete: (id) => {
-    return axios.delete(`${url_Petstore}/booking/${id}`, {
+    return axios.delete(`${config_Petstore.url_Petstore}/pet/${id}`, {
       headers: {
-        Authorization: "Basic YWRtaW46cGFzc3dvcmQxMjM=",
+        accept: "application/json",
         "Content-Type": "application/json",
-        Cookie: "token=abc123",
       },
     });
   },
