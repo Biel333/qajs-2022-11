@@ -1,10 +1,9 @@
 const axios = require("axios");
-import config from "../../config.js";
-const { url } = config;
+import { config } from "../../config.js";
 
-export const user = {
+const user = {
   login: (payload) => {
-    return axios.post(`${url}/auth`, {
+    return axios.post(`${config.url}/auth`, {
       headers: {
         "Content-Type": "application/json",
       },
@@ -15,4 +14,4 @@ export const user = {
   },
 };
 
-export default user;
+export { user };

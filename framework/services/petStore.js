@@ -1,18 +1,20 @@
 const axios = require("axios");
-import config_Petstore from "../../config.js";
-const { url } = config_Petstore;
+import { config_Petstore } from "../../config.js";
 
 const petStore = {
   getPetByStatus: (status) => {
-    return axios.get(`${url}/pet/findByStatus?status=${status}`, {
-      headers: {
-        "accept": "application/json",
+    return axios.get(
+      `${config_Petstore.url_Petstore}pet/findByStatus?status=${status}`,
+      {
+        headers: {
+          accept: "application/json",
+        },
       },
-    });
+    );
   },
 
   create: (payload) => {
-    return axios.post(`${url}/booking`, {
+    return axios.post(`${url_Petstore}/booking`, {
       headers: {
         "Content-Type": "application/json",
       },
@@ -21,7 +23,7 @@ const petStore = {
   },
 
   update: async (id, payload) => {
-    return axios.put(`${url}/booking/${id}`, {
+    return axios.put(`${url_Petstore}/booking/${id}`, {
       headers: {
         Authorization: "Basic YWRtaW46cGFzc3dvcmQxMjM=",
         "Content-Type": "application/json",
@@ -32,7 +34,7 @@ const petStore = {
   },
 
   delete: (id) => {
-    return axios.delete(`${url}/booking/${id}`, {
+    return axios.delete(`${url_Petstore}/booking/${id}`, {
       headers: {
         Authorization: "Basic YWRtaW46cGFzc3dvcmQxMjM=",
         "Content-Type": "application/json",
@@ -42,4 +44,4 @@ const petStore = {
   },
 };
 
-export default petStore;
+export { petStore };

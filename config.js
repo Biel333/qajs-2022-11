@@ -1,4 +1,4 @@
-export const config = {
+const config = {
   url: "https://restful-booker.herokuapp.com",
   credentials: {
     username: "admin",
@@ -6,10 +6,12 @@ export const config = {
   },
 };
 
-export const config_Petstore = {
-  url: "https://petstore.swagger.io/v2/",
-  credentials: {
+const config_Petstore = {
+  url_Petstore: "https://petstore.swagger.io/v2/",
+  credentials_Petstore: {
     username: "admin",
     password: "password123",
   },
 };
+
+export { config, config_Petstore };

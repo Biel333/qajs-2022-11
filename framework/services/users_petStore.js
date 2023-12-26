@@ -1,6 +1,5 @@
 const axios = require("axios");
-import config_Petstore from "../../config.js";
-const { url } = config_Petstore;
+import { url } from "../../config.js";
 
 export const user = {
   login: (payload) => {

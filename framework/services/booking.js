@@ -1,10 +1,9 @@
 const axios = require("axios");
-import config from "../../config.js";
-const { url } = config;
+import { config } from "../../config.js";
 
 const booking = {
   get: () => {
-    return axios.get(`${url}/booking`, {
+    return axios.get(`${config.url}/booking`, {
       headers: {
         "Content-Type": "application/json",
       },
@@ -12,7 +11,7 @@ const booking = {
   },
 
   create: (payload) => {
-    return axios.post(`${url}/booking`, {
+    return axios.post(`${config.url}/booking`, {
       headers: {
         "Content-Type": "application/json",
       },
@@ -21,7 +20,7 @@ const booking = {
   },
 
   update: async (id, payload) => {
-    return axios.put(`${url}/booking/${id}`, {
+    return axios.put(`${config.url}/booking/${id}`, {
       headers: {
         Authorization: "Basic YWRtaW46cGFzc3dvcmQxMjM=",
         "Content-Type": "application/json",
@@ -32,7 +31,7 @@ const booking = {
   },
 
   delete: (id) => {
-    return axios.delete(`${url}/booking/${id}`, {
+    return axios.delete(`${config.url}/booking/${id}`, {
       headers: {
         Authorization: "Basic YWRtaW46cGFzc3dvcmQxMjM=",
         "Content-Type": "application/json",
@@ -42,4 +41,4 @@ const booking = {
   },
 };
 
-export default booking;
+export { booking };
