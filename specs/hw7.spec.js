@@ -1,7 +1,7 @@
 //Работаю с https://restful-booker.herokuapp.com
-import user from "../framework/services/users.js";
-import booking from "../framework/services/booking.js";
-import config from "../config.js";
+import { user } from "../framework/services/users.js";
+import { booking } from "../framework/services/booking.js";
+import { config } from "../config.js";
 
 describe("5 API-тестов на сервис бронирования", () => {
   test("Авторизация", async () => {
