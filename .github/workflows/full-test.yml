@@ -41,9 +41,9 @@ jobs:
     - name: Upload report
       uses: actions/upload-artifact@v3
       with: 
-        name: report
+        name: test-report
         if-no-files-found: error
-        path: ./jest-html-reports
+        path: ./
 
     - name: Run tests coverage
       run: npm run test:coverage
