@@ -2,7 +2,7 @@ module.exports = {
   reporters: [
     "default",
     [
-      "./jest-html-reporter",
+      "./node_modules/jest-html-reporter",
       {
         pageTitle: "Test Report",
       },
