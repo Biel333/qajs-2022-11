@@ -58,7 +58,6 @@ jobs:
 
       #5801403357:AAGmdEXSJltDNWBTvtKRTqLz2y9u7FURuxs
 
-
     - name: send telegram message on push
       uses: appleboy/telegram-action@master
       with:
