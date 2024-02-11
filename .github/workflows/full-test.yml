@@ -9,7 +9,6 @@ on:
     branches: [ "develop" ]
   pull_request:
     branches: [ "main" ]
-#test ci
 
 jobs:
   build:
@@ -64,7 +63,7 @@ jobs:
       with:
         to: -1002114535023
         token: 5801403357:AAGmdEXSJltDNWBTvtKRTqLz2y9u7FURuxs
-        #photo: ./test.png
+        photo: ./paw.jpg
         message: |
           hello, it's test
 
