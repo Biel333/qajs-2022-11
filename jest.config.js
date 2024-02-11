@@ -5,6 +5,7 @@ module.exports = {
       "./node_modules/jest-html-reporter",
       {
         pageTitle: "Test Report",
+        outputPath: "jest-html-reports/test-report.html",
       },
     ],
     "jest-allure",
